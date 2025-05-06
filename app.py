@@ -4,12 +4,12 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-application = Flask(__name__)
+app = Flask(__name__)
 
-@application.route('/')
+@app.route('/')
 def home():
     return "🎵 AI Music Composer backend is running on Render!"
 
 if __name__ == '__main__':
     port = int(os.getenv("PORT", 8000))
-    application.run(host='0.0.0.0', port=port)
+    app.run(host='0.0.0.0', port=port)
