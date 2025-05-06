@@ -10,6 +10,9 @@ app = Flask(__name__)
 def home():
     return "🎵 AI Music Composer backend is running on Render!"
 
+
 if __name__ == '__main__':
-    port = int(os.getenv("PORT", 8000))
+    port = int(os.environ.get('PORT', 5000))
+    print(f"Flask app is running on port: {port}")
+
     app.run(host='0.0.0.0', port=port)
